@@ -2,22 +2,31 @@ package aos.factory;
 
 public class DoughnutFactory {
 
-    public Doughnut getDoughnut(DoughnutTypes type){
-        Doughnut doughnut = null;
-        switch (type){
-            case ALMOND:
-                doughnut = new AlmondDoughnut();
-                break;
-            case CHERRY:
-                doughnut = new CherryDoughnut();
-                break;
-            case CHOCOLATE:
-                doughnut = new ChocolateDoughnut();
-                break;
-            default:
-                throw new IllegalArgumentException("Wrong doughnut type:"+ type);
+    private Integer cherryDoughnutCount = 0;
+    private Integer chocolateDoughnutCount = 0;
+    private Integer almondDoughnutCount = 0;
 
-        }
-        return doughnut;
+    public Doughnut getDoughnut(DoughnutTypes type){
+        Doughnut doughnut = type.getDoughut();
+
+        setDoughnutCount(doughnut);
+        return type.getDoughut();
     }
+
+
+    private <T extends Doughnut> void setDoughnutCount(T doughnut){
+        cherryDoughnutCount++;
+    }
+
+    private <T extends CherryDoughnut> void setDoughnutCount(T doughnut){
+        cherryDoughnutCount++;
+    }
+    private <T extends ChocolateDoughnut> void setDoughnutCount(T doughnut){
+        chocolateDoughnutCount++;
+    }
+    private <T extends AlmondDoughnut> void setDoughnutCount(T doughnut){
+        almondDoughnutCount++;
+    }
+
+
 }
