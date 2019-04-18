@@ -1,4 +1,4 @@
-package aos.mediator;
+package aos.patterns;
 
 public abstract class User {
     protected ChatMediator mediator;

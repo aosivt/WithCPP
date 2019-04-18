@@ -1,4 +1,4 @@
-package aos.mediator;
+package aos.patterns;
 
 public interface ChatMediator {
     public void sendMessage(String message, User user);

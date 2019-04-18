@@ -1,4 +1,4 @@
-package aos.mediator;
+package aos.patterns;
 
 import aos.strategy.*;
 import org.junit.After;

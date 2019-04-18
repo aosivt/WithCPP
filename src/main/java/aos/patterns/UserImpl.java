@@ -1,4 +1,4 @@
-package aos.mediator;
+package aos.patterns;
 
 public class UserImpl extends User {
 

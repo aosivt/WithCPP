@@ -7,26 +7,30 @@ public class DoughnutFactory {
     private Integer almondDoughnutCount = 0;
 
     public Doughnut getDoughnut(DoughnutTypes type){
-        Doughnut doughnut = type.getDoughut();
 
-        setDoughnutCount(doughnut);
-        return type.getDoughut();
+        return type.getDoughut(this);
     }
 
 
-    private <T extends Doughnut> void setDoughnutCount(T doughnut){
+    public <T extends CherryDoughnut>void setDoughnutCount(T aClass){
         cherryDoughnutCount++;
     }
-
-    private <T extends CherryDoughnut> void setDoughnutCount(T doughnut){
-        cherryDoughnutCount++;
-    }
-    private <T extends ChocolateDoughnut> void setDoughnutCount(T doughnut){
+    public <T extends ChocolateDoughnut> void setDoughnutCount(T aClass){
         chocolateDoughnutCount++;
     }
-    private <T extends AlmondDoughnut> void setDoughnutCount(T doughnut){
+    public <T extends AlmondDoughnut> void setDoughnutCount(T aClass){
         almondDoughnutCount++;
     }
 
+    public Integer getCherryDoughnutCount() {
+        return cherryDoughnutCount;
+    }
 
+    public Integer getChocolateDoughnutCount() {
+        return chocolateDoughnutCount;
+    }
+
+    public Integer getAlmondDoughnutCount() {
+        return almondDoughnutCount;
+    }
 }

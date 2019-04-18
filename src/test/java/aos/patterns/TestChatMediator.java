@@ -1,4 +1,4 @@
-package aos.mediator;
+package aos.patterns;
 
 import org.junit.*;
 
